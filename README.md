@@ -70,7 +70,6 @@ The package can be installed as:
 
 ```elixir
     config :authable, Authable.Repo,
-      adapter: Ecto.Adapters.Postgres,
       username: "",
       password: "",
       database: "",

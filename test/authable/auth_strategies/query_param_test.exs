@@ -1,4 +1,4 @@
-defmodule Authable.AuthStrategy.QueryParamTest do
+  defmodule Authable.AuthStrategy.QueryParamTest do
   use ExUnit.Case
   use Authable.Rollbackable
   use Authable.ModelCase

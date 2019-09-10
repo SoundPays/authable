@@ -10,11 +10,11 @@ The package can be installed as:
 
   1. Add authable to your list of dependencies in `mix.exs`:
 
-      Only for ecto versions > 2.0
+      Only for ecto versions > 3.0
 
 ```elixir
     def deps do
-      [{:authable, "~> 0.10.0"}]
+      [{:authable, "~> 0.11.0"}]
     end
 ```
 

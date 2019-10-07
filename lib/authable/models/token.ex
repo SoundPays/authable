@@ -9,9 +9,6 @@ defmodule Authable.Model.Token do
   alias Authable.Model.User
   alias Authable.Utils.Crypt, as: CryptUtil
 
-  @primary_key {:id, :binary_id, autogenerate: true}
-  @foreign_key_type :binary_id
-
   schema "tokens" do
     field(:name, :string)
     field(:value, :string)

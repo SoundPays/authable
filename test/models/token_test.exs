@@ -19,7 +19,7 @@ defmodule Authable.Model.TokenTest do
   end
 
   test "changeset with invalid attributes" do
-    changeset = @token_store.changeset(%@token_store{}, %{user_id: 123_456})
+    changeset = @token_store.changeset(%@token_store{}, %{user_id: "123_456"})
     refute changeset.valid?
   end
 

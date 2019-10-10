@@ -89,7 +89,8 @@ defmodule Authable.Authentication.Basic do
   end
 
   defp match_with_user_password(password, user),
-    do: CryptUtil.match_password(password, Map.get(user, :password, ""))
+    do:
+      CryptUtil.match_password(password, Map.get(user, :encrypted_password, ""))
 
   defp error_headers, do: [%{"www-authenticate" => "Basic realm=\"authable\""}]
 end

@@ -4,7 +4,7 @@ defmodule Authable.Repo.Migrations.CreateUser do
   def change do
     create table(:users) do
       add(:email, :string)
-      add(:password, :string)
+      add(:encrypted_password, :string)
       add(:settings, :jsonb)
       add(:priv_settings, :jsonb)
 

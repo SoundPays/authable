@@ -11,6 +11,7 @@ defmodule Authable.Model.User do
   schema "users" do
     field(:email, :string)
     field(:password, :string, virtual: true)
+    field(:encrypted_password, :string)
     field(:settings, :map)
     field(:priv_settings, :map)
     has_many(:clients, Client)
@@ -64,7 +65,11 @@ defmodule Authable.Model.User do
   defp put_password_hash(model_changeset) do
     case model_changeset do
       %Ecto.Changeset{valid?: true, changes: %{password: pass}} ->
-        put_change(model_changeset, :password, CryptUtil.salt_password(pass))
+        put_change(
+          model_changeset,
+          :encrypted_password,
+          CryptUtil.salt_password(pass)
+        )
 
       _ ->
         model_changeset

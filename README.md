@@ -77,7 +77,7 @@ The package can be installed as:
       pool_size: 10
 ```
 
-  4. Run migrations for Authable.Repo (Note: all id fields are UUID type):
+  1. Run migrations for Authable.Repo:
 
   *Important:* You should update `Authable.Repo` with your own repo!
 

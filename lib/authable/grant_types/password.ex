@@ -104,7 +104,10 @@ defmodule Authable.GrantType.Password do
   end
 
   defp match_with_user_password({:ok, user}, password) do
-    if CryptUtil.match_password(password, Map.get(user, :password, "")) do
+    if CryptUtil.match_password(
+         password,
+         Map.get(user, :encrypted_password, "")
+       ) do
       {:ok, user}
     else
       GrantTypeError.invalid_grant("Identity, password combination is wrong.")

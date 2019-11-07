@@ -10,7 +10,7 @@ defmodule Authable.Factory do
   def user_factory do
     %@resource_owner{
       email: sequence(:email, &"foo-#{&1}@example.com"),
-      password: Bcrypt.hash_pwd_salt("12345678")
+      encrypted_password: Bcrypt.hash_pwd_salt("12345678")
     }
   end
 

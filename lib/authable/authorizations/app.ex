@@ -56,7 +56,7 @@ defmodule Authable.Authorization.App do
         t in @token_store,
         where:
           t.user_id == ^app.user_id and
-            fragment("?->>'client_id' = ?", t.details, ^app.client_id)
+            fragment("(?->>'client_id')::bigint = ?", t.details, ^app.client_id)
       )
 
     repo().delete_all(query)
